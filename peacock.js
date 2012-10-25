@@ -1,4 +1,4 @@
-var config = require('./themes/default')
+var defaultTheme = require('./themes/default')
   , redeyed = require('redeyed')
   , path = require('path')
   ;
@@ -20,7 +20,7 @@ function resolveTheme(t) {
 }
 
 function highlight(code, theme_) {
-  var theme = resolveTheme(theme_) || config;
+  var theme = theme_ ? resolveTheme(theme_) || defaultTheme : defaultTheme;
 
   var highlightedCode = redeyed(code, theme).code;
 
