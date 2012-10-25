@@ -56,10 +56,40 @@ var classes = {
     , 'Generic.Traceback'      :  'gt'
     }
   , spans = {};
+  
+// strings and comments can contain html that needs to be escaped
+var escapees = [ 
+    'String'            
+  , 'Comment'           
+  , 'Comment.Multiline' 
+  , 'Comment.Preproc'   
+  , 'Comment.Single'    
+  , 'Comment.Special'   
+  ];
+
+function escapeHtml (s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
+}
+
+function escaperWrapper (clazz) {
+  return function escapeAndWrap (s) {
+    return [ 
+        '<span class="'
+      , clazz 
+      , '">' 
+      , escapeHtml(s) 
+      , '</span>'
+      ].join('');
+  };
+}
 
 Object.keys(classes)
   .forEach(function (k) {
-    spans[k] = '<span class="' + classes[k] +'">:</span>';
+    spans[k] = ~escapees.indexOf(k)   ? 
+      escaperWrapper(classes[k])      : 
+      '<span class="' + classes[k] +'">:</span>';
   });
+
+console.log(spans);
 
 module.exports = spans;
