@@ -1,31 +1,29 @@
-/* 
- * Copy this file and use it as a starting point for your redeyed config.
- * Just fill in the tokens you want to surround/replace.
- * Keep in mind that more specific configurations override less specific ones.
- */
+var spans = require('../spans');
 
 module.exports = {
 
     'Boolean': {
       'true'   :  undefined
     , 'false'  :  undefined
-    , _default :  undefined
+    , _default :  spans['Keyword.Constant']
     }
 
   , 'Identifier': {
-      _default: undefined
+      'Date': spans['Literal.Date']
+    , 'Error': spans['Generic.Error']
+    , _default: spans.Name.Other
     }
 
   , 'Null': {
-      _default: undefined
+      _default :  spans['Keyword.Constant']
     }
 
   , 'Numeric': {
-      _default: undefined
+      _default: spans.Number
     }
 
   , 'String': {
-      _default: undefined
+      _default: spans.String
     }
 
   , 'Keyword': {
@@ -64,19 +62,19 @@ module.exports = {
 
     , 'while'       :  undefined
     , 'with'        :  undefined
-    , _default      :  undefined
+    , _default      :  spans.Keyword
   }
   , 'Punctuator': {
-      ';': undefined  
-    , '.': undefined  
-    , ',': undefined  
+      ';': spans.Punctuation  
+    , '.': spans.Punctuation  
+    , ',': spans.Punctuation  
 
-    , '{': undefined  
-    , '}': undefined  
-    , '(': undefined  
-    , ')': undefined  
-    , '[': undefined
-    , ']': undefined
+    , '{': spans.Punctuation  
+    , '}': spans.Punctuation  
+    , '(': spans.Punctuation  
+    , ')': spans.Punctuation  
+    , '[': spans.Punctuation
+    , ']': spans.Punctuation
 
     , '<': undefined
     , '>': undefined
@@ -120,8 +118,15 @@ module.exports = {
     
     , '>>>=': undefined
 
-    , _default: undefined
+    , _default: spans.Operator  
   }
+  , Line: {
+     _default: spans['Comment.Single']
+    }
+
+  , Block: {
+     _default: spans.Comment
+    }
 
   , _default: undefined
 };

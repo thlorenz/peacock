@@ -23,6 +23,6 @@
     "tap": "~0.3.1"
   },
   "dependencies": {
-    "redeyed": "~0.1.2"
+    "redeyed": "~0.3.0"
   }
 }
