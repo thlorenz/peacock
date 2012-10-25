@@ -17,10 +17,10 @@ var peacock  =  require('..')
 
 // Highlight code and generate html with style reference included
 
-//code = fs.readFileSync(__dirname + '/../../cardinal/cardinal.js', 'utf-8');
+code = fs.readFileSync(__dirname + '/../../cardinal/cardinal.js', 'utf-8');
 var highlightedCode = peacock.highlight(code, 'hide-semicolons');
 
-if (1 === 2 ) throw new Error('on no');
+if (3 <= 2 ) throw new Error('on no');
 //console.log(highlightedCode);
 
 var  html = [

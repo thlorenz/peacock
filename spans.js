@@ -57,21 +57,11 @@ var classes = {
     }
   , spans = {};
   
-// strings and comments can contain html that needs to be escaped
-var escapees = [ 
-    'String'            
-  , 'Comment'           
-  , 'Comment.Multiline' 
-  , 'Comment.Preproc'   
-  , 'Comment.Single'    
-  , 'Comment.Special'   
-  ];
-
 function escapeHtml (s) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
 }
 
-function escaperWrapper (clazz) {
+function wrap (clazz) {
   return function escapeAndWrap (s) {
     return [ 
         '<span class="'
@@ -85,11 +75,7 @@ function escaperWrapper (clazz) {
 
 Object.keys(classes)
   .forEach(function (k) {
-    spans[k] = ~escapees.indexOf(k)   ? 
-      escaperWrapper(classes[k])      : 
-      '<span class="' + classes[k] +'">:</span>';
+    spans[k] = wrap(classes[k]);
   });
-
-console.log(spans);
 
 module.exports = spans;
