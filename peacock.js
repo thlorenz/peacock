@@ -1,11 +1,15 @@
-var defaultTheme = require('./themes/default')
-  , redeyed = require('redeyed')
-  , path = require('path')
+var defaultTheme =  require('./themes/default')
+  , redeyed      =  require('redeyed')
+  , path         =  require('path')
+  , toString     =  Object.prototype.toString
   ;
-
 
 function isPath (s) {
   return (/[\/\\]/).test(s);
+}
+
+function isObject (obj) {
+  return toString.call(obj) === '[object Object]';
 }
 
 function resolveTheme(t) {
@@ -20,7 +24,11 @@ function resolveTheme(t) {
 }
 
 function highlight(code, theme_) {
-  var theme = theme_ ? resolveTheme(theme_) || defaultTheme : defaultTheme;
+  var theme;
+  if(theme_) 
+    theme = isObject(theme_) ? theme_ : resolveTheme(theme_);
+  else
+    theme = defaultTheme;
 
   var highlightedCode = redeyed(code, theme).code;
 
