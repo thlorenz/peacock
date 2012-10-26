@@ -22,7 +22,7 @@ styles](https://github.com/thlorenz/peacock/tree/master/styles).
   - it can also be a {String} (either the name of a [built-in
     theme](https://github.com/thlorenz/peacock/tree/master/themes) or the full path to a theme anywhere on your computer
 
-## Examples (**[browse]**(https://github.com/thlorenz/peacock/tree/master/examples))
+## Examples (*[browse]*](https://github.com/thlorenz/peacock/tree/master/examples))
 
 - `node` [pageofself](https://github.com/thlorenz/peacock/blob/master/examples/pageofself.js) highlights itself using
   the [tango style](https://github.com/thlorenz/peacock/blob/master/styles/tango.css)
