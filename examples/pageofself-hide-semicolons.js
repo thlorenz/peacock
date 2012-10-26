@@ -1,5 +1,6 @@
 /* 
  * Creates html version of itself and wraps it inside html page tags.
+ * During the highlight all semicolons are removed.
  * Finally opens it in the browser.
  */
 
@@ -16,7 +17,7 @@ var peacock  =  require('..')
 // Highlight code and generate html with style reference included
 function highlight (code) {
 
-  var highlightedCode = peacock.highlight(code);
+  var highlightedCode = peacock.highlight(code, 'hide-semicolons');
 
   return [
       '<!DOCTYPE HTML>'
@@ -24,7 +25,7 @@ function highlight (code) {
     , '<head>'
     , '   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>'
     , '   <title>Page of Self</title>'
-    , ' <link rel="stylesheet" href="' + styles + '/tango.css" type="text/css" media="screen" charset="utf-8" />'
+    , ' <link rel="stylesheet" href="' + styles + '/fruity.css" type="text/css" media="screen" charset="utf-8" />'
     , '</head>'
     , '<body>'
     , highlightedCode
