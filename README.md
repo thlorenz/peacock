@@ -12,4 +12,4 @@ JavaScript syntax highlighter that generates html that is compatible with pygmen
 
 ## API
 
-### ***peacock.highlight(code[, theme)***
+### ***peacock.highlight(code[, theme])***
