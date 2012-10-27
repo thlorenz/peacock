@@ -6,7 +6,9 @@
     <title>Peacock by thlorenz</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/pygments/tango.css">
+
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
@@ -20,6 +22,7 @@
         <p class="header">JavaScript syntax highlighter that generates html that is compatible with pygments styles.</p>
 
         <ul>
+          <li class="download"><a class="buttons" href="https://raw.github.com/thlorenz/peacock/master/peacock-browser.js">Browser Version</a></li>
           <li class="download"><a class="buttons" href="https://github.com/thlorenz/peacock/zipball/master">Download ZIP</a></li>
           <li class="download"><a class="buttons" href="https://github.com/thlorenz/peacock/tarball/master">Download TAR</a></li>
           <li><a class="buttons github" href="https://github.com/thlorenz/peacock">View On GitHub</a></li>
@@ -27,52 +30,11 @@
 
         <p class="header">This project is maintained by <a class="header name" href="https://github.com/thlorenz">thlorenz</a></p>
 
-
       </header>
       <section>
-        <h1>peacock <a href="http://travis-ci.org/thlorenz/peacock"><img src="https://secure.travis-ci.org/thlorenz/peacock.png" alt="build status"></a>
-</h1>
-
-<p>JavaScript syntax highlighter that generates html that is compatible with <a href="https://github.com/thlorenz/peacock/tree/master/styles">pygments
-styles</a>.</p>
-
-<h2>Status</h2>
-
-<ul>
-<li>functional server side</li>
-</ul><h2>Installation</h2>
-
-<pre><code>npm install peacock
-</code></pre>
-
-<h2>API</h2>
-
-<h3><strong><em>peacock.highlight(code[, theme])</em></strong></h3>
-
-<ul>
-<li>returns the highlighted version of the file whose fullPath ({String}) was passed or throws an error if it was not able
-to parse it</li>
-<li>
-<code>theme</code> ({Object} or {String}) is used to optionally override the theme used to highlight
-
-<ul>
-<li>if it is {Object} it has to be of <a href="https://github.com/thlorenz/peacock/blob/master/themes/empty.js">this form</a>
-</li>
-<li>it can also be a {String} (either the name of a <a href="https://github.com/thlorenz/peacock/tree/master/themes">built-in
-theme</a> or the full path to a theme anywhere on your computer</li>
-</ul>
-</li>
-</ul><h2>Examples (<a href="https://github.com/thlorenz/peacock/tree/master/examples"><em>browse</em></a>)</h2>
-
-<ul>
-<li>
-<code>node</code> <a href="https://github.com/thlorenz/peacock/blob/master/examples/pageofself.js">pageofself</a> highlights itself using
-the <a href="https://github.com/thlorenz/peacock/blob/master/styles/tango.css">tango style</a>
-</li>
-<li>
-<code>node</code> <a href="https://github.com/thlorenz/peacock/blob/master/examples/pageofself-hide-semicolons.js">pageofself-hide-semicolons</a> highlights itself using
-the <a href="https://github.com/thlorenz/peacock/blob/master/styles/fruity.css">fruity style</a> and hides all semicolons</li>
-</ul>
+        <h1>peacock</h1>
+        <div class="result"></div>
+        <textarea class="code"></textarea>
       </section>
       <footer>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
@@ -80,5 +42,11 @@ the <a href="https://github.com/thlorenz/peacock/blob/master/styles/fruity.css">
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
 		
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/ariya/esprima/master/esprima.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/thlorenz/redeyed/master/redeyed.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/thlorenz/peacock/master/peacock-browser.js"></script>
+    <script src="javascripts/index.js"></script>
   </body>
 </html>

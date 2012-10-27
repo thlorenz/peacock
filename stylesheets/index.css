@@ -1,0 +1,25 @@
+.code {
+  width: 600px;
+  height: 500px;
+  display: block;
+  margin: 10px;
+  font-family: Consolas;
+  font-size: 16px;
+  float: left;
+}
+
+.result {
+  margin: 10px;
+  width: 600px;
+  height: 500px;
+  display: block;
+}
+
+.result * {
+  height: 500px;
+}
+
+.result pre {
+  overflow-y: auto;
+}
+
