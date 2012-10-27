@@ -249,6 +249,9 @@
                     'Manually resolve or create a theme {Object} and pass that to "highlight" instead.');
   }
 
+
+var redeyed = redeyed || exports.redeyed;
+
   function highlight(code, theme_) {
     var toString = Object.prototype.toString;
   

@@ -70,6 +70,11 @@ lines.push('')
 lines.push(resolveThemeReplacement);
 lines.push('')
 
+
+lines.push('')
+lines.push('var redeyed = redeyed || exports.redeyed;');
+lines.push('')
+
 peacock.highlight.toString()
   .split('\n')
   .forEach(function (s) { lines.push('  ' + s) })
