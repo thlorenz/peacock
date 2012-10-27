@@ -1,5 +1,5 @@
 {
-  "name": "peackock",
+  "name": "peacock",
   "version": "0.1.0",
   "description": "JavaScript syntax highlighter that generates html that is compatible with pygments styles.",
   "main": "peacock.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/thlorenz/peackock.git"
+    "url": "git://github.com/thlorenz/peacock.git"
   },
   "keywords": [
     "javascript",
