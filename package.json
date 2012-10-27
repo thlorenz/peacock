@@ -5,6 +5,7 @@
   "main": "peacock.js",
   "scripts": {
     "test": "tap test/*.js",
+    "build": "node ./build/glue.js",
     "demo": "cd examples/browser-simple; open index.html;"
   },
   "repository": {

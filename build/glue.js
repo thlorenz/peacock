@@ -41,7 +41,6 @@ lines.push('')
 lines.push(iifeHead)
 lines.push('  \'use strict\';')
 
-
 // spans
 addSourceMap('spans.js')
 spans
