@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Run: 
+# ln -s ../../build/pre-commit.sh .git/hooks/pre-commit 
+# from the root of this project in order to activate the pre-commit hook.
+
 # 0. Prepare commit by running build and adding the result to this commit
 npm run build
 git add peacock-browser.js
