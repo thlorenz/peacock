@@ -1,0 +1,27 @@
+.code {
+  width: 500px;
+  height: 500px;
+  display: block;
+  margin: 20px;
+  font-family: Consolas;
+  font-size: 16px;
+}
+.go {
+  display: block;
+  font-size: 18px;
+  margin: 20px;
+}
+
+.result {
+  width: 500px;
+  height: 1000px;
+  display: block;
+}
+
+.edit {
+  float: left;
+}
+
+.results {
+  float: left;
+}
