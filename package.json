@@ -4,7 +4,8 @@
   "description": "JavaScript syntax highlighter that generates html that is compatible with pygments styles.",
   "main": "peacock.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
+    "demo": "cd examples/browser-simple; open index.html;"
   },
   "repository": {
     "type": "git",
