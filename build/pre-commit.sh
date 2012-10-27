@@ -1,12 +1,10 @@
 #!/bin/sh
 
-echo "Executing pre-commit"
-
-# 0. Prepare commit by running build
+# 0. Prepare commit by running build and adding the result to this commit
 npm run build
 git add peacock-browser.js
 
-# 1. Ensure that code not part of procpective commit is not tested during pre-commit script
+# 1. Ensure that code not part of prospective commit is not tested during pre-commit script
 git stash -q --keep-index
 
 # 2. Test prospective commit
