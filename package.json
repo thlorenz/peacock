@@ -1,7 +1,7 @@
 {
   "name": "peacock",
   "version": "0.1.1",
-  "description": "JavaScript syntax highlighter that generates html that is compatible with pygments styles.",
+  "description": "JavaScript syntax highlighter that generates pygments compatible html and therefore supports pygments styles.",
   "main": "peacock.js",
   "scripts": {
     "test": "tap test/*.js",
