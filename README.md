@@ -36,7 +36,8 @@ peacock will be exposed as `window.peacock` which allows calling `peacock.highli
 
 ## Examples ([*browse*](https://github.com/thlorenz/peacock/tree/master/examples))
 
-- `node` [pageofself](https://github.com/thlorenz/peacock/blob/master/examples/pageofself.js) highlights itself using
+- visit [peacock's homepage](http://thlorenz.github.com/peacock/)
+- [pageofself](https://github.com/thlorenz/peacock/blob/master/examples/pageofself.js) highlights itself using
   the [tango style](https://github.com/thlorenz/peacock/blob/master/styles/tango.css)
-- `node` [pageofself-hide-semicolons](https://github.com/thlorenz/peacock/blob/master/examples/pageofself-hide-semicolons.js) highlights itself using
+- [pageofself-hide-semicolons](https://github.com/thlorenz/peacock/blob/master/examples/pageofself-hide-semicolons.js) highlights itself using
   the [fruity style](https://github.com/thlorenz/peacock/blob/master/styles/fruity.css) and hides all semicolons
