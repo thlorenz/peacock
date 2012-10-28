@@ -1,11 +1,10 @@
 # peacock [![build status](https://secure.travis-ci.org/thlorenz/peacock.png)](http://travis-ci.org/thlorenz/peacock)
+***pea·cock*** - *the male of the peafowl distinguished by its long, erectile, greenish, iridescent tail coverts.*
 
 JavaScript syntax highlighter that generates html that is compatible with [pygments
 styles](https://github.com/thlorenz/peacock/tree/master/styles).
 
-## Status
-
-- functional server side
+[![peacock](http://animal.discovery.com/birds/peacock/pictures/peacock-picture.jpg)](http://animal.discovery.com/birds/peacock/) 
 
 ## Installation
 
@@ -24,7 +23,7 @@ styles](https://github.com/thlorenz/peacock/tree/master/styles).
 
 ## Browser support
 
-### Attaced to global window object
+### Attached to global window object
 
 peacock will be exposed as `window.peacock` which allows calling `peacock.highlight` from anywhere.
 
