@@ -1,10 +1,11 @@
 # peacock [![build status](https://secure.travis-ci.org/thlorenz/peacock.png)](http://travis-ci.org/thlorenz/peacock)
-***pea·cock*** - *the male of the peafowl distinguished by its long, erectile, greenish, iridescent tail coverts.*
 
-JavaScript syntax highlighter that generates html that is compatible with [pygments
-styles](https://github.com/thlorenz/peacock/tree/master/styles).
+JavaScript syntax highlighter that generates html that is [pygments](http://pygments.org/) compatible and therefore
+supports [pygments styles](https://github.com/thlorenz/peacock/tree/master/styles).
 
-[![peacock](http://animal.discovery.com/birds/peacock/pictures/peacock-picture.jpg)](http://animal.discovery.com/birds/peacock/) 
+![peacock](http://animal.discovery.com/birds/peacock/pictures/peacock-picture.jpg)
+
+[Peacock](http://animal.discovery.com/birds/peacock/) *(Pavo cristasus)*
 
 ## Installation
 
