@@ -12,7 +12,7 @@
   width: 600px;
   height: 500px;
   display: block;
- 
+  margin-bottom: 30px;
 }
 
 .highlight {
@@ -33,5 +33,10 @@
 }
 
 #style-selector-container {
-  margin-left: 10px;
+  margin-left: 480px;
+}
+
+#style-selector-container h4 {
+  display: inline;
+  margin-right: 10px;
 }
