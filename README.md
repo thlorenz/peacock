@@ -22,7 +22,7 @@ styles](https://github.com/thlorenz/peacock/tree/master/styles).
   - it can also be a {String} (either the name of a [built-in
     theme](https://github.com/thlorenz/peacock/tree/master/themes) or the full path to a theme anywhere on your computer
 
-### Browser support
+## Browser support
 
 ### Attaced to global window object
 
