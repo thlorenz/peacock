@@ -6,8 +6,7 @@ var test          =  require('tap').test
   , utl           =  require('./utl')
   , redeyed       =  require('redeyed')
   , esprima       =  require('../node_modules/redeyed/node_modules/esprima')
-  , peacockExport =  require('..')
-  , peacockkey    =  require.resolve('..')
+  , peacockkey    =  require.resolve('../peacock-browser')
 
 function setup() {
   // remove peacockfrom require cache to force re-require for each test
@@ -18,33 +17,38 @@ function setup() {
   delete global.define;
 }
 
-/*
- *test('define and window exist', function (t) {
- *  var defineCb
- *    , deps
- *
- *  setup()  
- *
- *  // declare browser globals
- *  global.window = { }
- *
- *  global.define = function (deps_, cb) { 
- *    deps_ = deps 
- *    defineCb = cb 
- *  }
- *
- *  define.amd = true
- *
- *  var redeyed = require('..')
- *    , definedredeyed = defineCb(esprima)
- *
- *  t.equal(window.redeyed, undefined, 'redeyed is not attached to window')
- *  t.notEqual(redeyed.toString(), redeyedExport.toString(), 'redeyed is not exported')
- *  t.equal(definedredeyed.toString(), redeyedExport.toString(), 'redeyed is defined')
- *
- *  t.end()
- *})
- */
+test('define and window exist', function (t) {
+  var defineCb
+    , deps
+
+  setup()  
+
+  // declare browser globals
+  global.window = { }
+
+  global.define = function (deps_, cb) { 
+    deps = deps_; 
+    defineCb = cb 
+  }
+
+  define.amd = true
+
+  require('../peacock-browser')
+
+  var definedpeacock = defineCb(redeyed)
+
+
+  var result = definedpeacock.highlight('var a = 3;')
+
+  t.equal(window.peacock, undefined, 'peacock is not attached to window')
+  t.deepEquals(['redeyed'], deps, 'requires redeyed')
+  t.equals(
+      result
+    , utl.wrapped('<span class="k">var</span> a <span class="o">=</span> <span class="f">3</span><span class="p">;</span>')
+    , 'peacock is defined and highlights')
+
+  t.end()
+})
 
 test('window exists, but define doesn\'t', function (t) {
   setup()  
