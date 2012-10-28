@@ -1,6 +1,10 @@
-var $code   =  $('.code')
-  , $result =  $('.result')
+var $code          =  $('.code')
+  , $result        =  $('.result')
+  , $styleSelector =  $('#style-selector')
+  , $styles        =  $('#style-link')
+  , stylesPath     =  'stylesheets/pygments'
   ;
+
 function escapeHtml (s) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
 }
@@ -33,6 +37,12 @@ function go () {
 
 $code.val(window.peacock.highlight.toString());
 $code.on('input propertychange', go);
+
+$styleSelector.on('change', function (event) {
+  var el = $styleSelector[0];
+  var selectedStyle = el.options[el.selectedIndex].text;
+  $styles.attr('href', stylesPath + '/' + selectedStyle + '.css');
+});
 
 go();
 

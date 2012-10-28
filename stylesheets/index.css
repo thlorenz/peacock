@@ -5,7 +5,6 @@
   margin: 10px;
   font-family: Consolas;
   font-size: 16px;
-  float: left;
 }
 
 .result {
@@ -13,6 +12,16 @@
   width: 600px;
   height: 500px;
   display: block;
+ 
+}
+
+.highlight {
+  border-radius:10px;
+  border:1px solid #D7D8C8;
+  
+  -moz-box-shadow: 5px 4px 10px 5px #ccc;
+  -webkit-box-shadow: 5px 4px 10px 5px #ccc;
+  box-shadow: 5px 4px 10px 5px #ccc;
 }
 
 .result * {
@@ -23,3 +32,6 @@
   overflow-y: auto;
 }
 
+#style-selector-container {
+  margin-left: 10px;
+}

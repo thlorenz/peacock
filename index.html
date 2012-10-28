@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/index.css">
-    <link rel="stylesheet" href="stylesheets/pygments/tango.css">
+    <link id="style-link" rel="stylesheet" href="stylesheets/pygments/tango.css">
 
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -33,6 +33,30 @@
       </header>
       <section>
         <h1>peacock</h1>
+
+        <div id="style-selector-container">
+            <select id="style-selector">
+                <option value="autumn">autumn</option>
+                <option value="borland">borland</option>
+                <option value="bw">bw</option>
+                <option value="colorful">colorful</option>
+                <option value="default">default</option>
+                <option value="emacs">emacs</option>
+                <option value="friendly">friendly</option>
+                <option value="fruity">fruity</option>
+                <option value="manni">manni</option>
+                <option value="monokai">monokai</option>
+                <option value="murphy">murphy</option>
+                <option value="native">native</option>
+                <option value="pastie">pastie</option>
+                <option value="perldoc">perldoc</option>
+                <option value="rrt">rrt</option>
+                <option selected value="tango">tango</option>
+                <option value="trac">trac</option>
+                <option value="vim">vim</option>
+                <option value="vs">vs</option>
+            </select>
+        </div>
         <div class="result"></div>
         <textarea class="code"></textarea>
       </section>
