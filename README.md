@@ -22,6 +22,18 @@ styles](https://github.com/thlorenz/peacock/tree/master/styles).
   - it can also be a {String} (either the name of a [built-in
     theme](https://github.com/thlorenz/peacock/tree/master/themes) or the full path to a theme anywhere on your computer
 
+### Browser support
+
+### Attaced to global window object
+
+peacock will be exposed as `window.peacock` which allows calling `peacock.highlight` from anywhere.
+
+```html
+<script type="text/javascript" src="https://raw.github.com/ariya/esprima/master/esprima.js"></script>
+<script type="text/javascript" src="https://raw.github.com/thlorenz/redeyed/master/redeyed.js"></script>
+<script type="text/javascript" src="https://github.com/thlorenz/peacock/raw/master/peacock-browser.js"></script>
+```
+
 ## Examples ([*browse*](https://github.com/thlorenz/peacock/tree/master/examples))
 
 - `node` [pageofself](https://github.com/thlorenz/peacock/blob/master/examples/pageofself.js) highlights itself using
