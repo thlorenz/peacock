@@ -15,28 +15,31 @@ JavaScript syntax highlighter that generates [pygments](http://pygments.org/) co
 
 ### Online 
 
-[peacock's homepage](http://thlorenz.github.com/peacock/)
+[peacock github page](http://thlorenz.github.com/peacock/)
 
 ### Included demo
 
-`npm exlore peacock && npm run demo`
+`npm exlore peacock` 
+`npm run demo`
 
 ## Features and limitations
 
 - works server side via [nodejs](http://nodejs.org)
-- browser support (amd or global window object)
+- works in the browser via AMD, if available, or as global window object
 - **only highlights JavaScript** - if that is a dealbreaker look into some [alternatives](#alternatives)
 
 ## API
 
 ### ***peacock.highlight(code[, theme])***
 
-- returns the highlighted version of the file whose fullPath ({String}) was passed or throws an error if it was not able
-  to parse it
-- `theme` ({Object} or {String}) is used to optionally override the theme used to highlight
-  - if it is {Object} it has to be of [this form](https://github.com/thlorenz/peacock/blob/master/themes/empty.js)
-  - it can also be a {String} (either the name of a [built-in
-    theme](https://github.com/thlorenz/peacock/tree/master/themes) or the full path to a theme anywhere on your computer
+Returns the highlighted version of the code that was passed or throws an error if it was not able to parse it.
+
+#### theme:
+
+- (`{Object}` or `{String}`) that is used to optionally override the theme used to highlight
+- if it is `{Object}` it has to be of [this form](https://github.com/thlorenz/peacock/blob/master/themes/empty.js)
+- it can also be a `{String}`, **if used server side** - either the name of a [built-in
+  theme](https://github.com/thlorenz/peacock/tree/master/themes) or the full path to a theme anywhere on your computer
 
 ## Browser support
 
