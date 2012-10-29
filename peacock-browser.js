@@ -253,21 +253,28 @@
     }
 
       //@ sourceMappingURL=peacock.js.map
-  function highlight(code, theme_) {
-    var toString = Object.prototype.toString;
+  function highlight(code, opts) {
+    var toString = Object.prototype.toString
+      , splits
+      , theme
+      , highlightedCode;
+  
+    opts = opts || { };
   
     function isObject (obj) {
       return toString.call(obj) === '[object Object]';
     }
   
-    var theme;
-  
-    if(theme_) 
-      theme = isObject(theme_) ? theme_ : resolveTheme(theme_);
+    if(opts.theme) 
+      theme = isObject(opts.theme) ? opts.theme : resolveTheme(opts.theme);
     else
       theme = defaultTheme;
   
-    var highlightedCode = redeyed(code, theme).code;
+    splits = redeyed(code, theme, { nojoin: true }).splits;
+  
+    if (opts.lineno) addLinenos(splits);
+    
+    highlightedCode = splits.join('');
   
     return [
         '<div class="highlight"><pre>'
