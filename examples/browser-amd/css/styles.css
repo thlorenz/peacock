@@ -158,12 +158,9 @@ code, pre {
 }
 
 pre {
-	padding: 4px 12px;
+	padding: 4px;
  
   overflow: auto;
-  
-	overflow-y: auto;
-	margin-bottom: 32px;
 }
 
 
@@ -171,13 +168,10 @@ pre {
 
 table {
   width:100%;
+  margin: 0;
+  padding: 0;
 }
 
-table {
-  border: 1px solid #ccc;
-  margin-bottom: 32px;
-  text-align: left;
- }
 
 th {
   font-family: 'Arvo', Helvetica, Arial, sans-serif;
@@ -189,10 +183,9 @@ th {
  }
 
 td {
-  padding: 10px;
-	background: #ccc;
- }
-
+  padding: 0 5px 0 0;
+  margin: 0;
+}
 
 /* Wrapper */
 .wrapper {

@@ -20,58 +20,55 @@ function resolveTheme(t) {
   }
 }
 
-function addLinenos (highlightedCode) {
-  var lines = highlightedCode.split('\n')
-    , linesLen
-    , totalDigits
-    ;
-
-  function getDigits (n) {
-    if (n < 10) return 1;
-    if (n < 100) return 2;
-    if (n < 1000) return 3;
-    if (n < 10000) return 4;
-    // this works for up to 99,999 lines - any questions?
-    return 5;
-  }
-
-  function pad (n, totalDigits) {
-    // not pretty, but simple and should perform quite well
-    var padDigits= totalDigits - getDigits(n);
-     switch(padDigits) {
-       case 0: return '' + n;
-       case 1: return ' ' + n;
-       case 2: return '  ' + n;
-       case 3: return '   ' + n;
-       case 4: return '    ' + n;
-       case 5: return '     ' + n;
-     }
-  }
-
-  function linenoHtml (lineno, totalDigits) {
-    return  [ '<a name="line-'
-            , lineno
-            , '"></a><span class="lineno">'
-            , pad(lineno, totalDigits)
-            , '</span>'
-            ].join('');
-  }
-
-  linesLen = lines.length;
-  totalDigits = getDigits(linesLen);
-
-  for (var i = 0; i < linesLen; i++) {
-    lines[i] = [ linenoHtml(i + 1, totalDigits), lines[i] ].join('');
-  }
-
-  return lines.join('');
-}
-
 function highlight(code, opts) {
   var toString = Object.prototype.toString
     , splits
     , theme
     , highlightedCode;
+
+  function createLinenos (highlightedCode) {
+    var linesLen = highlightedCode.split('\n').length
+      , lines = []
+      , totalDigits
+      ;
+
+    function getDigits (n) {
+      if (n < 10) return 1;
+      if (n < 100) return 2;
+      if (n < 1000) return 3;
+      if (n < 10000) return 4;
+      // this works for up to 99,999 lines - any questions?
+      return 5;
+    }
+
+    function pad (n, totalDigits) {
+      // not pretty, but simple and should perform quite well
+      var padDigits= totalDigits - getDigits(n);
+      switch(padDigits) {
+        case 0: return '' + n;
+        case 1: return ' ' + n;
+        case 2: return '  ' + n;
+        case 3: return '   ' + n;
+        case 4: return '    ' + n;
+        case 5: return '     ' + n;
+      }
+    }
+
+    function linenoHtml (lineno, totalDigits) {
+      return  [ '<span class="lineno">'
+              , pad(lineno, totalDigits)
+              , '</span>'
+              ].join('');
+    }
+
+    totalDigits = getDigits(linesLen);
+
+    for (var i = 1; i <= linesLen; i++) {
+      lines.push(linenoHtml(i, totalDigits));
+    }
+
+    return lines.join('\n');
+  }
 
   opts = opts || { };
 
@@ -86,7 +83,17 @@ function highlight(code, opts) {
 
   highlightedCode = redeyed(code, theme).code;
 
-  if (opts.linenos) highlightedCode = addLinenos(highlightedCode);
+  // Wrap highlighted code inside two column table with lineno column
+  if (opts.linenos) highlightedCode = [
+      '<table>'
+    ,   '<td>'
+    ,     createLinenos(highlightedCode)
+    ,   '</td>'
+    ,   '<td>'
+    ,      highlightedCode
+    ,   '</td>'
+    , '</table>'
+    ].join('\n');
   
 
   return [

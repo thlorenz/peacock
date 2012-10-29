@@ -47,6 +47,23 @@ test('define and window exist', function (t) {
     , utl.wrapped('<span class="k">var</span> a <span class="o">=</span> <span class="f">3</span><span class="p">;</span>')
     , 'peacock is defined and highlights')
 
+  result = definedpeacock.highlight('var a = 3;', { linenos: true })
+
+  t.equals(
+      result
+    , [ '<div class="highlight"><pre>'
+      , '<table>'
+      , '<td>'
+      , '<span class="lineno">1</span>'
+      , '</td>'
+      , '<td>'
+      , '<span class="k">var</span> a <span class="o">=</span> <span class="f">3</span><span class="p">;</span>'
+      , '</td>'
+      , '</table>'
+      , '</pre></div>'
+      ].join('\n')
+    , 'peacock is defined and highlights with linenos')
+
   t.end()
 })
 
