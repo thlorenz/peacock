@@ -16,7 +16,7 @@ require(['jquery', 'peacock'], function ($, peacock) {
 
     try {
       code = $code.val();
-      var result = peacock.highlight(code);
+      var result = peacock.highlight(code, { linenos: true });
       $result.append(result);
     } catch (e) {
       var raw = [ 

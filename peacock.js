@@ -1,3 +1,5 @@
+'use strict';
+
 var defaultTheme =  require('./themes/default')
   , redeyed      =  require('redeyed')
   , path         =  require('path')
@@ -18,8 +20,9 @@ function resolveTheme(t) {
   }
 }
 
-function addLinenos (splits) {
-  var splitsLen
+function addLinenos (highlightedCode) {
+  var lines = highlightedCode.split('\n')
+    , linesLen
     , totalDigits
     ;
 
@@ -49,17 +52,19 @@ function addLinenos (splits) {
     return  [ '<a name="line-'
             , lineno
             , '"></a><span class="lineno">'
-            , pad(n, totalDigits)
+            , pad(lineno, totalDigits)
             , '</span>'
             ].join('');
   }
 
-  splitsLen = splits.length;
-  totalDigits = getDigits(splitsLen);
+  linesLen = lines.length;
+  totalDigits = getDigits(linesLen);
 
-  for (var i = 0; i < splitsLen; i++) {
-    splits[i] = [ linenoHtml(i + 1, totalDigits), splits[i] ].join('');
+  for (var i = 0; i < linesLen; i++) {
+    lines[i] = [ linenoHtml(i + 1, totalDigits), lines[i] ].join('');
   }
+
+  return lines.join('');
 }
 
 function highlight(code, opts) {
@@ -79,11 +84,10 @@ function highlight(code, opts) {
   else
     theme = defaultTheme;
 
-  splits = redeyed(code, theme, { nojoin: true }).splits;
+  highlightedCode = redeyed(code, theme).code;
 
-  if (opts.lineno) addLinenos(splits);
+  if (opts.linenos) highlightedCode = addLinenos(highlightedCode);
   
-  highlightedCode = splits.join('');
 
   return [
       '<div class="highlight"><pre>'

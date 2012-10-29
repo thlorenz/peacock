@@ -270,11 +270,10 @@
     else
       theme = defaultTheme;
   
-    splits = redeyed(code, theme, { nojoin: true }).splits;
+    highlightedCode = redeyed(code, theme).code;
   
-    if (opts.lineno) addLinenos(splits);
+    if (opts.linenos) highlightedCode = addLinenos(highlightedCode);
     
-    highlightedCode = splits.join('');
   
     return [
         '<div class="highlight"><pre>'

@@ -9,13 +9,13 @@ function wrapped(s) {
   ].join('\n');
 }
 
-function run(t, cases, theme) {
+function run(t, cases, opts) {
   Object.keys(cases).forEach(function (k) {
     var vals = cases[k]
       , code = vals[0]
       , high = vals[1]
 
-    t.equals(peacock.highlight(code, theme), wrapped(high), k);
+    t.equals(peacock.highlight(code, opts), wrapped(high), k);
   });
   t.end()
 }
