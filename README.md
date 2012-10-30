@@ -30,9 +30,18 @@ JavaScript syntax highlighter that generates [pygments](http://pygments.org/) co
 
 ## API
 
-### ***peacock.highlight(code[, theme])***
+### ***peacock.highlight(code[, opts])***
 
 Returns the highlighted version of the code that was passed or throws an error if it was not able to parse it.
+
+#### opts:
+
+```js
+{   
+    theme: {String}|{Object}
+  , linenos: true|false 
+}
+```
 
 #### theme:
 
@@ -40,6 +49,11 @@ Returns the highlighted version of the code that was passed or throws an error i
 - if it is `{Object}` it has to be of [this form](https://github.com/thlorenz/peacock/blob/master/themes/empty.js)
 - it can also be a `{String}`, **if used server side** - either the name of a [built-in
   theme](https://github.com/thlorenz/peacock/tree/master/themes) or the full path to a theme anywhere on your computer
+
+#### linenos:
+
+- if true the generated html includes line numbers
+- default is false
 
 ## Browser support
 
