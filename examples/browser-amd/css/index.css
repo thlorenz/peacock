@@ -34,10 +34,17 @@
 }
 
 #style-selector-container {
-  margin-left: 505px;
+  display: block;
+  float: right;
 }
 
 #style-selector-container h4 {
   display: inline;
   margin-right: 10px;
+}
+
+#linenumbers {
+  display: block;
+  float: left;
+  margin-left: 10px;
 }

@@ -3,6 +3,7 @@ require(['jquery', 'peacock'], function ($, peacock) {
     , $result        =  $('.result')
     , $styleSelector =  $('#style-selector')
     , $styles        =  $('#style-link')
+    , $linenumbers   =  $('#linenumbers')
     , stylesPath     =  '../../styles'
     ;
 
@@ -16,7 +17,7 @@ require(['jquery', 'peacock'], function ($, peacock) {
 
     try {
       code = $code.val();
-      var result = peacock.highlight(code, { linenos: true });
+      var result = peacock.highlight(code, { linenos: $linenumbers.attr('checked') });
       $result.append(result);
     } catch (e) {
       var raw = [ 
@@ -37,7 +38,10 @@ require(['jquery', 'peacock'], function ($, peacock) {
   }
 
   $code.val(peacock.highlight.toString());
+  $linenumbers.attr('checked', 'checked');
+
   $code.on('input propertychange', go);
+  $linenumbers.on('change', go);
 
   $styleSelector.on('change', function (event) {
     var el = $styleSelector[0];
