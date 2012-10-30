@@ -2,6 +2,7 @@ var $code          =  $('.code')
   , $result        =  $('.result')
   , $styleSelector =  $('#style-selector')
   , $styles        =  $('#style-link')
+  , $linenumbers   =  $('#linenumbers')
   , stylesPath     =  'stylesheets/pygments'
   ;
 
@@ -15,7 +16,7 @@ function go () {
 
   try {
     code = $code.val();
-    var result = peacock.highlight(code);
+    var result = peacock.highlight(code, { linenos: $linenumbers.attr('checked') });
     $result.append(result);
   } catch (e) {
     var raw = [ 
@@ -36,7 +37,11 @@ function go () {
 }
 
 $code.val(window.peacock.highlight.toString());
+
+$linenumbers.attr('checked', 'checked');
+
 $code.on('input propertychange', go);
+$linenumbers.on('change', go);
 
 $styleSelector.on('change', function (event) {
   var el = $styleSelector[0];

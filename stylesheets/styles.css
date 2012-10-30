@@ -158,12 +158,9 @@ code, pre {
 }
 
 pre {
-	padding: 4px 12px;
+	padding: 4px;
  
   overflow: auto;
-  
-	overflow-y: auto;
-	margin-bottom: 32px;
 }
 
 
@@ -171,13 +168,10 @@ pre {
 
 table {
   width:100%;
+  margin: 0;
+  padding: 0;
 }
 
-table {
-  border: 1px solid #ccc;
-  margin-bottom: 32px;
-  text-align: left;
- }
 
 th {
   font-family: 'Arvo', Helvetica, Arial, sans-serif;
@@ -189,10 +183,9 @@ th {
  }
 
 td {
-  padding: 10px;
-	background: #ccc;
- }
-
+  padding: 0 5px 0 0;
+  margin: 0;
+}
 
 /* Wrapper */
 .wrapper {
@@ -287,7 +280,7 @@ header li:hover {
 
 a.buttons {
 	-webkit-font-smoothing: antialiased;
-	background: url(../images/arrow-down.png) no-repeat;
+	background: url(https://github.com/thlorenz/peacock/raw/gh-pages/images/arrow-down.png) no-repeat;
 	font-weight: normal;
 	text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0;
 	padding: 2px 2px 2px 22px;
@@ -295,7 +288,7 @@ a.buttons {
 }
 
 a.github {
-	background: url(../images/octocat-small.png) no-repeat 1px;
+	background: url(https://github.com/thlorenz/peacock/raw/gh-pages/images/octocat-small.png) no-repeat 1px;
 }
 
 a.buttons:hover {
