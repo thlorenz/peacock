@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Peacock by thlorenz</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link id="style-link" rel="stylesheet" href="../../styles/tango.css">
+    <!--<link id="style-link" rel="stylesheet" href="../../styles/pygments/tango.css">-->
+    <script data-main="scripts/main" src="http://requirejs.org/docs/release/2.1.1/minified/require.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Peacock</h1>
+        <p class="header">JavaScript syntax highlighter that generates html that is compatible with pygments styles.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://raw.github.com/thlorenz/peacock/master/peacock-browser.js">Browser Version</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/thlorenz/peacock/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/thlorenz/peacock/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/thlorenz/peacock">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/thlorenz">thlorenz</a></p>
+
+      </header>
+      <section>
+        <h1>peacock</h1>
+        <div>
+          <input id="linenumbers" type="checkbox">Line Numbers
+
+          <div id="style-selector-container">
+              <h4>Style: </h4>
+              <select id="style-selector">
+                  <option value="autumn">autumn</option>
+                  <option value="borland">borland</option>
+                  <option value="bw">bw</option>
+                  <option value="colorful">colorful</option>
+                  <option value="default">default</option>
+                  <option value="emacs">emacs</option>
+                  <option value="friendly">friendly</option>
+                  <option value="fruity">fruity</option>
+                  <option value="manni">manni</option>
+                  <option value="monokai">monokai</option>
+                  <option value="murphy">murphy</option>
+                  <option value="native">native</option>
+                  <option value="pastie">pastie</option>
+                  <option value="perldoc">perldoc</option>
+                  <option value="rrt">rrt</option>
+                  <option selected value="tango">tango</option>
+                  <option value="trac">trac</option>
+                  <option value="vim">vim</option>
+                  <option value="vs">vs</option>
+              </select>
+          </div>
+        </div>
+        <div class="result"></div>
+        <textarea class="code"></textarea>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </body>
+</html>
