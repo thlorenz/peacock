@@ -1,6 +1,6 @@
 var spans = require('../spans');
 
-/* 
+/*
  * Copy this file and use it as a starting point for your custom peacock color theme.
  * Just fill in or change the entries for the tokens you want to color
  * Keep in mind that more specific configurations override less specific ones.
@@ -30,11 +30,13 @@ module.exports = {
       _default: undefined
     }
 
-  , 'Keyword': {
+ , 'Keyword': {
       'break'       :  undefined
 
     , 'case'        :  undefined
     , 'catch'       :  undefined
+    , 'class'       :  undefined
+    , 'const'       :  undefined
     , 'continue'    :  undefined
 
     , 'debugger'    :  undefined
@@ -43,17 +45,31 @@ module.exports = {
     , 'do'          :  undefined
 
     , 'else'        :  undefined
+    , 'enum'        :  undefined
+    , 'export'      :  undefined
+    , 'extends'     :  undefined
 
     , 'finally'     :  undefined
     , 'for'         :  undefined
     , 'function'    :  undefined
 
     , 'if'          :  undefined
+    , 'implements'  :  undefined
+    , 'import'      :  undefined
     , 'in'          :  undefined
     , 'instanceof'  :  undefined
-
+    , 'interface'   :  undefined
+    , 'let'         :  undefined
     , 'new'         :  undefined
+
+    , 'package'     :  undefined
+    , 'private'     :  undefined
+    , 'protected'   :  undefined
+    , 'public'      :  undefined
+
     , 'return'      :  undefined
+    , 'static'      :  undefined
+    , 'super'       :  undefined
     , 'switch'      :  undefined
 
     , 'this'        :  undefined
@@ -66,17 +82,18 @@ module.exports = {
 
     , 'while'       :  undefined
     , 'with'        :  undefined
+    , 'yield'       :  undefined
     , _default      :  undefined
   }
   , 'Punctuator': {
-      ';': undefined  
-    , '.': undefined  
-    , ',': undefined  
+      ';': undefined
+    , '.': undefined
+    , ',': undefined
 
-    , '{': undefined  
-    , '}': undefined  
-    , '(': undefined  
-    , ')': undefined  
+    , '{': undefined
+    , '}': undefined
+    , '(': undefined
+    , ')': undefined
     , '[': undefined
     , ']': undefined
 
@@ -113,14 +130,17 @@ module.exports = {
     , '|=': undefined
     , '^=': undefined
     , '/=': undefined
+    , '=>': undefined
+    , '**': undefined
 
     , '===': undefined
     , '!==': undefined
     , '>>>': undefined
     , '<<=': undefined
     , '>>=': undefined
-    
     , '>>>=': undefined
+    , '...': undefined
+    , '**=': undefined
 
     , _default: undefined
   }
