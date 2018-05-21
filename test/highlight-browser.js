@@ -2,7 +2,7 @@
 /*jshint asi: true, browser: true*/
 /*global define window */
 
-var test          =  require('tap').test
+var test          =  require('tape')
   , utl           =  require('./utl')
   , redeyed       =  require('redeyed')
   , esprima       =  require('../node_modules/redeyed/node_modules/esprima')

@@ -1,5 +1,5 @@
 /*jshint asi: true*/
-var test    =  require('tap').test
+var test    =  require('tape')
   , path    =  require('path')
   , utl     =  require('./utl')
   , wrap    =  utl.wrap
