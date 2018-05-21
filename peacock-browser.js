@@ -146,6 +146,8 @@
   
       , 'case'        :  undefined
       , 'catch'       :  undefined
+      , 'class'       :  undefined
+      , 'const'       :  undefined
       , 'continue'    :  undefined
   
       , 'debugger'    :  undefined
@@ -154,17 +156,31 @@
       , 'do'          :  undefined
   
       , 'else'        :  undefined
+      , 'enum'        :  undefined
+      , 'export'      :  undefined
+      , 'extends'     :  undefined
   
       , 'finally'     :  undefined
       , 'for'         :  undefined
       , 'function'    :  undefined
   
       , 'if'          :  undefined
+      , 'implements'  :  undefined
+      , 'import'      :  undefined
       , 'in'          :  undefined
       , 'instanceof'  :  undefined
   
       , 'new'         :  undefined
+  
+      , 'package'     :  undefined
+      , 'private'     :  undefined
+      , 'protected'   :  undefined
+      , 'public'      :  undefined
+  
       , 'return'      :  undefined
+  
+      , 'static'      :  undefined
+      , 'super'       :  undefined
       , 'switch'      :  undefined
   
       , 'this'        :  undefined
@@ -177,17 +193,18 @@
   
       , 'while'       :  undefined
       , 'with'        :  undefined
+      , 'yield'       :  undefined
       , _default      :  spans.Keyword
     }
     , 'Punctuator': {
-        ';': spans.Punctuation  
-      , '.': spans.Punctuation  
-      , ',': spans.Punctuation  
+        ';': spans.Punctuation
+      , '.': spans.Punctuation
+      , ',': spans.Punctuation
   
-      , '{': spans.Punctuation  
-      , '}': spans.Punctuation  
-      , '(': spans.Punctuation  
-      , ')': spans.Punctuation  
+      , '{': spans.Punctuation
+      , '}': spans.Punctuation
+      , '(': spans.Punctuation
+      , ')': spans.Punctuation
       , '[': spans.Punctuation
       , ']': spans.Punctuation
   
@@ -224,16 +241,19 @@
       , '|=': undefined
       , '^=': undefined
       , '/=': undefined
+      , '=>': undefined
+      , '**': undefined
   
       , '===': undefined
       , '!==': undefined
       , '>>>': undefined
       , '<<=': undefined
       , '>>=': undefined
-      
       , '>>>=': undefined
+      , '...': undefined
+      , '**=': undefined
   
-      , _default: spans.Operator  
+      , _default: spans.Operator
     }
     , Line: {
        _default: spans['Comment.Single']
