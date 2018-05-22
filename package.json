@@ -26,6 +26,6 @@
     "tape": "~4.9.0"
   },
   "dependencies": {
-    "redeyed": "^2.0.0"
+    "redeyed": "~2.1.0"
   }
 }
