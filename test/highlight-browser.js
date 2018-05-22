@@ -1,34 +1,33 @@
 'use strict'
-/*jshint asi: true, browser: true*/
-/*global define window */
+/* global define window */
 
 var test          =  require('tape')
-  , utl           =  require('./utl')
-  , redeyed       =  require('redeyed')
-  , esprima       =  require('../node_modules/redeyed/node_modules/esprima')
-  , peacockkey    =  require.resolve('../peacock-browser')
+var utl           =  require('./utl')
+var redeyed       =  require('redeyed')
+var esprima       =  require('../node_modules/redeyed/node_modules/esprima')
+var peacockkey    =  require.resolve('../peacock-browser')
 
 function setup() {
   // remove peacockfrom require cache to force re-require for each test
-  delete require.cache[peacockkey];
+  delete require.cache[peacockkey]
 
   // remove globals
-  delete global.window;
-  delete global.define;
+  delete global.window
+  delete global.define
 }
 
-test('define and window exist', function (t) {
+test('define and window exist', function(t) {
   var defineCb
     , deps
 
-  setup()  
+  setup()
 
   // declare browser globals
   global.window = { }
 
-  global.define = function (deps_, cb) { 
-    deps = deps_; 
-    defineCb = cb 
+  global.define = function(deps_, cb) {
+    deps = deps_
+    defineCb = cb
   }
 
   define.amd = true
@@ -36,7 +35,6 @@ test('define and window exist', function (t) {
   require('../peacock-browser')
 
   var definedpeacock = defineCb(redeyed)
-
 
   var result = definedpeacock.highlight('var a = 3;')
 
@@ -67,12 +65,12 @@ test('define and window exist', function (t) {
   t.end()
 })
 
-test('window exists, but define doesn\'t', function (t) {
-  setup()  
+test('window exists, but define doesn\'t', function(t) {
+  setup()
 
   // declare browser globals
   global.window = { esprima: esprima, redeyed: redeyed }
-  
+
   // attach redeyed to window
   require('../peacock-browser')
 

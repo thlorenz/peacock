@@ -1,3 +1,5 @@
+'use strict'
+
 /* eslint-disable no-unused-vars */
 var spans = require('../spans')
 /* eslint-enable no-unused-vars */

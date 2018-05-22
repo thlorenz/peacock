@@ -4,7 +4,10 @@
   "description": "JavaScript syntax highlighter that generates pygments compatible html and therefore supports pygments styles.",
   "main": "peacock.js",
   "scripts": {
-    "test": "tape test/*.js",
+    "test": "npm run run-test && npm run lint",
+    "run-test": "tape test/*.js",
+    "lint": "standart",
+    "lint-fix": "standart --fix",
     "build": "node ./build/glue.js",
     "demo": "cd examples/browser-amd; open index.html;"
   },
@@ -23,9 +26,16 @@
   "license": "MIT",
   "devDependencies": {
     "cardinal": "~2.0.1",
+    "standart": "~6.1.0",
     "tape": "~4.9.0"
   },
   "dependencies": {
     "redeyed": "~2.1.0"
+  },
+  "standart": {
+    "ignore": [
+      "peacock-browser.js",
+      "build/template.js"
+    ]
   }
 }

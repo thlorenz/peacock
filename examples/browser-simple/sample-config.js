@@ -1,3 +1,5 @@
+'use strict'
+
 window.sampleConfig = {
 
     'Boolean': {
@@ -61,14 +63,14 @@ window.sampleConfig = {
     , _default      :  ': <- keyword'
   }
   , 'Punctuator': {
-      ';': undefined  
-    , '.': undefined  
-    , ',': undefined  
+      ';': undefined
+    , '.': undefined
+    , ',': undefined
 
-    , '{': undefined  
-    , '}': undefined  
-    , '(': undefined  
-    , ')': undefined  
+    , '{': undefined
+    , '}': undefined
+    , '(': undefined
+    , ')': undefined
     , '[': undefined
     , ']': undefined
 
@@ -111,7 +113,7 @@ window.sampleConfig = {
     , '>>>': undefined
     , '<<=': undefined
     , '>>=': undefined
-    
+
     , '>>>=': undefined
 
     , _default: undefined
@@ -128,4 +130,4 @@ window.sampleConfig = {
     }
 
   , _default: undefined
-};
+}

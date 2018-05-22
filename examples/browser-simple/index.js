@@ -1,24 +1,26 @@
-var $code   =  $('.code')
-  , $result =  $('.result')
-  ;
+'use strict'
 
-function go () {
-  $result.empty();
+/* global peacock $ */
+
+var $code   =  $('.code')
+var $result =  $('.result')
+
+function go() {
+  $result.empty()
 
   try {
     var code = $code.val()
-      , result = peacock.highlight(code);
+    var result = peacock.highlight(code)
 
-    $result.append(result);
+    $result.append(result)
   } catch (e) {
-    $result.append('In "Original Code": ' + e.toString());
+    $result.append('In "Original Code": ' + e.toString())
   }
 }
 
-$code.val(window.peacock.highlight.toString());
+$code.val(window.peacock.highlight.toString())
 
-$('.go').click(go);
+$('.go').click(go)
 
-go();
-
+go()
 

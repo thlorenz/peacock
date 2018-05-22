@@ -26,11 +26,13 @@
  */
 
 
-;(function () {
-  function bootstrap (redeyed, exports) {
-    'use strict';
+;(function() {
+  function bootstrap(redeyed, exports) {
+    'use strict'
 
       //@ sourceMappingURL=spans.js.map
+  'use strict'
+  
   var classes = {
         String                   :  's'
       , Number                   :  'f'
@@ -63,7 +65,6 @@
       , 'Name.Variable.Global'   :  'vg'
       , 'Name.Variable.Instance' :  'vi'
   
-  
       , Literal                  :  'l'
       , 'Literal.Date'           :  'ld'
   
@@ -88,256 +89,291 @@
       , 'Generic.Subheading'     :  'gu'
       , 'Generic.Traceback'      :  'gt'
       }
-    , spans = {};
-    
-  function escapeHtml (s) {
-    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
+  var spans = {}
+  
+  function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   }
   
-  function wrap (clazz) {
-    return function escapeAndWrap (s) {
-      return [ 
+  function wrap(clazz) {
+    return function escapeAndWrap(s) {
+      return [
           '<span class="'
-        , clazz 
-        , '">' 
-        , escapeHtml(s) 
+        , clazz
+        , '">'
+        , escapeHtml(s)
         , '</span>'
-        ].join('');
-    };
+        ].join('')
+    }
   }
   
   Object.keys(classes)
-    .forEach(function (k) {
-      spans[k] = wrap(classes[k]);
-    });
+    .forEach(function(k) {
+      spans[k] = wrap(classes[k])
+    })
   
   
-    
+
       //@ sourceMappingURL=themes/default.js.map
   
   var defaultTheme = {
   
-      'Boolean': {
-        'true'   :  undefined
-      , 'false'  :  undefined
-      , _default :  spans['Keyword.Constant']
-      }
-  
-    , 'Identifier': {
-        'Date': spans['Literal.Date']
-      , 'Error': spans['Generic.Error']
-      , _default: spans.Name.Other
-      }
-  
-    , 'Null': {
-        _default :  spans['Keyword.Constant']
-      }
-  
-    , 'Numeric': {
-        _default: spans.Number
-      }
-  
-    , 'String': {
-        _default: spans.String
-      }
-  
-    , 'Keyword': {
-        'break'       :  undefined
-  
-      , 'case'        :  undefined
-      , 'catch'       :  undefined
-      , 'class'       :  undefined
-      , 'const'       :  undefined
-      , 'continue'    :  undefined
-  
-      , 'debugger'    :  undefined
-      , 'default'     :  undefined
-      , 'delete'      :  undefined
-      , 'do'          :  undefined
-  
-      , 'else'        :  undefined
-      , 'enum'        :  undefined
-      , 'export'      :  undefined
-      , 'extends'     :  undefined
-  
-      , 'finally'     :  undefined
-      , 'for'         :  undefined
-      , 'function'    :  undefined
-  
-      , 'if'          :  undefined
-      , 'implements'  :  undefined
-      , 'import'      :  undefined
-      , 'in'          :  undefined
-      , 'instanceof'  :  undefined
-  
-      , 'new'         :  undefined
-  
-      , 'package'     :  undefined
-      , 'private'     :  undefined
-      , 'protected'   :  undefined
-      , 'public'      :  undefined
-  
-      , 'return'      :  undefined
-  
-      , 'static'      :  undefined
-      , 'super'       :  undefined
-      , 'switch'      :  undefined
-  
-      , 'this'        :  undefined
-      , 'throw'       :  undefined
-      , 'try'         :  undefined
-      , 'typeof'      :  undefined
-  
-      , 'var'         :  undefined
-      , 'void'        :  undefined
-  
-      , 'while'       :  undefined
-      , 'with'        :  undefined
-      , 'yield'       :  undefined
-      , _default      :  spans.Keyword
+    'Boolean': {
+      'true'   :  undefined
+    , 'false'  :  undefined
+    , _default :  spans['Keyword.Constant']
     }
-    , 'Punctuator': {
-        ';': spans.Punctuation
-      , '.': spans.Punctuation
-      , ',': spans.Punctuation
   
-      , '{': spans.Punctuation
-      , '}': spans.Punctuation
-      , '(': spans.Punctuation
-      , ')': spans.Punctuation
-      , '[': spans.Punctuation
-      , ']': spans.Punctuation
-  
-      , '<': undefined
-      , '>': undefined
-      , '+': undefined
-      , '-': undefined
-      , '*': undefined
-      , '%': undefined
-      , '&': undefined
-      , '|': undefined
-      , '^': undefined
-      , '!': undefined
-      , '~': undefined
-      , '?': undefined
-      , ':': undefined
-      , '=': undefined
-  
-      , '<=': undefined
-      , '>=': undefined
-      , '==': undefined
-      , '!=': undefined
-      , '++': undefined
-      , '--': undefined
-      , '<<': undefined
-      , '>>': undefined
-      , '&&': undefined
-      , '||': undefined
-      , '+=': undefined
-      , '-=': undefined
-      , '*=': undefined
-      , '%=': undefined
-      , '&=': undefined
-      , '|=': undefined
-      , '^=': undefined
-      , '/=': undefined
-      , '=>': undefined
-      , '**': undefined
-  
-      , '===': undefined
-      , '!==': undefined
-      , '>>>': undefined
-      , '<<=': undefined
-      , '>>=': undefined
-      , '>>>=': undefined
-      , '...': undefined
-      , '**=': undefined
-  
-      , _default: spans.Operator
+  , 'Identifier': {
+      'Date': spans['Literal.Date']
+    , 'Error': spans['Generic.Error']
+    , _default: spans.Name.Other
     }
-    , Line: {
-       _default: spans['Comment.Single']
-      }
   
-    , Block: {
-       _default: spans.Comment
+  , 'Null': {
+      _default :  spans['Keyword.Constant']
+    }
+  
+  , 'Numeric': {
+      _default: spans.Number
+    }
+  
+  , 'String': {
+      _default: spans.String
+    }
+  
+  , 'Keyword': {
+      'break'       :  undefined
+  
+    , 'case'        :  undefined
+    , 'catch'       :  undefined
+    , 'class'       :  undefined
+    , 'const'       :  undefined
+    , 'continue'    :  undefined
+  
+    , 'debugger'    :  undefined
+    , 'default'     :  undefined
+    , 'delete'      :  undefined
+    , 'do'          :  undefined
+  
+    , 'else'        :  undefined
+    , 'enum'        :  undefined
+    , 'export'      :  undefined
+    , 'extends'     :  undefined
+  
+    , 'finally'     :  undefined
+    , 'for'         :  undefined
+    , 'function'    :  undefined
+  
+    , 'if'          :  undefined
+    , 'implements'  :  undefined
+    , 'import'      :  undefined
+    , 'in'          :  undefined
+    , 'instanceof'  :  undefined
+  
+    , 'new'         :  undefined
+  
+    , 'package'     :  undefined
+    , 'private'     :  undefined
+    , 'protected'   :  undefined
+    , 'public'      :  undefined
+  
+    , 'return'      :  undefined
+  
+    , 'static'      :  undefined
+    , 'super'       :  undefined
+    , 'switch'      :  undefined
+  
+    , 'this'        :  undefined
+    , 'throw'       :  undefined
+    , 'try'         :  undefined
+    , 'typeof'      :  undefined
+  
+    , 'var'         :  undefined
+    , 'void'        :  undefined
+  
+    , 'while'       :  undefined
+    , 'with'        :  undefined
+    , 'yield'       :  undefined
+    , _default      :  spans.Keyword
+  }
+  , 'Punctuator': {
+      ';': spans.Punctuation
+    , '.': spans.Punctuation
+    , ',': spans.Punctuation
+  
+    , '{': spans.Punctuation
+    , '}': spans.Punctuation
+    , '(': spans.Punctuation
+    , ')': spans.Punctuation
+    , '[': spans.Punctuation
+    , ']': spans.Punctuation
+  
+    , '<': undefined
+    , '>': undefined
+    , '+': undefined
+    , '-': undefined
+    , '*': undefined
+    , '%': undefined
+    , '&': undefined
+    , '|': undefined
+    , '^': undefined
+    , '!': undefined
+    , '~': undefined
+    , '?': undefined
+    , ':': undefined
+    , '=': undefined
+  
+    , '<=': undefined
+    , '>=': undefined
+    , '==': undefined
+    , '!=': undefined
+    , '++': undefined
+    , '--': undefined
+    , '<<': undefined
+    , '>>': undefined
+    , '&&': undefined
+    , '||': undefined
+    , '+=': undefined
+    , '-=': undefined
+    , '*=': undefined
+    , '%=': undefined
+    , '&=': undefined
+    , '|=': undefined
+    , '^=': undefined
+    , '/=': undefined
+    , '=>': undefined
+    , '**': undefined
+  
+    , '===': undefined
+    , '!==': undefined
+    , '>>>': undefined
+    , '<<=': undefined
+    , '>>=': undefined
+    , '>>>=': undefined
+    , '...': undefined
+    , '**=': undefined
+  
+    , _default: spans.Operator
+  }
+  , Line: {
+      _default: spans['Comment.Single']
+    }
+  
+  , Block: {
+      _default: spans.Comment
+    }
+  
+    // JSX
+    , JSXAttribute: {
+        _default: undefined
+      }
+    , JSXClosingElement: {
+        _default: undefined
+      }
+    , JSXElement: {
+        _default: undefined
+      }
+    , JSXEmptyExpression: {
+        _default: undefined
+      }
+    , JSXExpressionContainer: {
+        _default: undefined
+      }
+    , JSXIdentifier: {
+        // many more identifies are possible, div, table, etc.
+          className: spans['Name.Class']
+        , _default: spans['Name.Tag']
+      }
+    , JSXMemberExpression: {
+        _default: undefined
+      }
+    , JSXNamespacedName: {
+        _default: undefined
+      }
+    , JSXOpeningElement: {
+        _default: undefined
+      }
+    , JSXSpreadAttribute: {
+        _default: undefined
+      }
+    , JSXText: {
+        _default: undefined
       }
   
     , _default: undefined
-  };
+  }
   
-    
-    function resolveTheme() { 
-      throw new Error('Resolving a theme by filename only works server side. \n' + 
-                      'Manually resolve or create a theme {Object} and pass that to "highlight" instead.');
+
+    function resolveTheme() {
+      throw new Error('Resolving a theme by filename only works server side. \n' +
+                      'Manually resolve or create a theme {Object} and pass that to "highlight" instead.')
     }
 
       //@ sourceMappingURL=peacock.js.map
   function highlight(code, opts) {
     var toString = Object.prototype.toString
-      , splits
-      , theme
-      , highlightedCode;
+    var theme
+    var highlightedCode
   
-    function createLinenos (highlightedCode) {
+    function createLinenos(highlightedCode) {
       var linesLen = highlightedCode.split('\n').length
-        , lines = []
-        , totalDigits
-        ;
+      var lines = []
+      var totalDigits
   
-      function getDigits (n) {
-        if (n < 10) return 1;
-        if (n < 100) return 2;
-        if (n < 1000) return 3;
-        if (n < 10000) return 4;
+      function getDigits(n) {
+        if (n < 10) return 1
+        if (n < 100) return 2
+        if (n < 1000) return 3
+        if (n < 10000) return 4
         // this works for up to 99,999 lines - any questions?
-        return 5;
+        return 5
       }
   
-      function pad (n, totalDigits) {
+      function pad(n, totalDigits) {
         // not pretty, but simple and should perform quite well
-        var padDigits= totalDigits - getDigits(n);
-        switch(padDigits) {
-          case 0: return '' + n;
-          case 1: return ' ' + n;
-          case 2: return '  ' + n;
-          case 3: return '   ' + n;
-          case 4: return '    ' + n;
-          case 5: return '     ' + n;
+        var padDigits = totalDigits - getDigits(n)
+        switch (padDigits) {
+          case 0: return '' + n
+          case 1: return ' ' + n
+          case 2: return '  ' + n
+          case 3: return '   ' + n
+          case 4: return '    ' + n
+          case 5: return '     ' + n
         }
       }
   
-      function linenoHtml (lineno, totalDigits) {
+      function linenoHtml(lineno, totalDigits) {
         return  [ '<span class="lineno">'
                 , pad(lineno, totalDigits)
                 , '</span>'
-                ].join('');
+                ].join('')
       }
   
-      totalDigits = getDigits(linesLen);
+      totalDigits = getDigits(linesLen)
   
       for (var i = 1; i <= linesLen; i++) {
-        lines.push(linenoHtml(i, totalDigits));
+        lines.push(linenoHtml(i, totalDigits))
       }
   
-      return lines.join('\n');
+      return lines.join('\n')
     }
   
-    opts = opts || { };
+    opts = opts || { }
   
-    function isObject (obj) {
-      return toString.call(obj) === '[object Object]';
+    function isObject(obj) {
+      return toString.call(obj) === '[object Object]'
     }
   
-    if(opts.theme) 
-      theme = isObject(opts.theme) ? opts.theme : resolveTheme(opts.theme);
-    else
-      theme = defaultTheme;
+    if (opts.theme)    {
+  theme = isObject(opts.theme) ? opts.theme : resolveTheme(opts.theme)
+  }  else    { theme = defaultTheme }
   
-    highlightedCode = redeyed(code, theme).code;
+    highlightedCode = redeyed(code, theme).code
   
     // Wrap highlighted code inside two column table with lineno column
-    if (opts.linenos) highlightedCode = [
+    if (opts.linenos) {
+  highlightedCode = [
         '<table>'
       ,   '<td>'
       ,     createLinenos(highlightedCode)
@@ -346,29 +382,28 @@
       ,      highlightedCode
       ,   '</td>'
       , '</table>'
-      ].join('\n');
-    
+      ].join('\n')
+  }
   
     return [
         '<div class="highlight"><pre>'
       , highlightedCode
       , '</pre></div>'
-    ].join('\n');
+    ].join('\n')
   }
 
-    return { highlight: highlight };
+    return { highlight: highlight }
   }
 
   if (typeof define === 'function' && define.amd) {
     // amd
-    define(['redeyed'], function (redeyed) {
-      return bootstrap(redeyed);
-    });
-
+    define(['redeyed'], function(redeyed) {
+      return bootstrap(redeyed)
+    })
   } else if (typeof window === 'object') {
     // no amd -> attach to window if it exists
     // Note that this requires 'redeyed' to be defined on the window which in turn requires 'esprima'
     // Therefore those scripts have to be loaded first
-    window.peacock = bootstrap(window.redeyed);
-  } 
-})();
+    window.peacock = bootstrap(window.redeyed)
+  }
+})()

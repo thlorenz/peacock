@@ -1,3 +1,5 @@
+'use strict'
+
 var classes = {
       String                   :  's'
     , Number                   :  'f'
@@ -30,7 +32,6 @@ var classes = {
     , 'Name.Variable.Global'   :  'vg'
     , 'Name.Variable.Instance' :  'vi'
 
-
     , Literal                  :  'l'
     , 'Literal.Date'           :  'ld'
 
@@ -55,27 +56,27 @@ var classes = {
     , 'Generic.Subheading'     :  'gu'
     , 'Generic.Traceback'      :  'gt'
     }
-  , spans = {};
-  
-function escapeHtml (s) {
-  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
+var spans = {}
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
-function wrap (clazz) {
-  return function escapeAndWrap (s) {
-    return [ 
+function wrap(clazz) {
+  return function escapeAndWrap(s) {
+    return [
         '<span class="'
-      , clazz 
-      , '">' 
-      , escapeHtml(s) 
+      , clazz
+      , '">'
+      , escapeHtml(s)
       , '</span>'
-      ].join('');
-  };
+      ].join('')
+  }
 }
 
 Object.keys(classes)
-  .forEach(function (k) {
-    spans[k] = wrap(classes[k]);
-  });
+  .forEach(function(k) {
+    spans[k] = wrap(classes[k])
+  })
 
-module.exports = spans;
+module.exports = spans

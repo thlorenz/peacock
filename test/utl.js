@@ -1,4 +1,5 @@
-/*jshint asi:true*/
+'use strict'
+
 var peacock = require('..')
 
 function wrapped(s) {
@@ -6,17 +7,17 @@ function wrapped(s) {
       '<div class="highlight"><pre>'
     , s
     , '</pre></div>'
-  ].join('\n');
+  ].join('\n')
 }
 
 function run(t, cases, opts) {
-  Object.keys(cases).forEach(function (k) {
+  Object.keys(cases).forEach(function(k) {
     var vals = cases[k]
-      , code = vals[0]
-      , high = vals[1]
+    var code = vals[0]
+    var high = vals[1]
 
-    t.equals(peacock.highlight(code, opts), wrapped(high), k);
-  });
+    t.equals(peacock.highlight(code, opts), wrapped(high), k)
+  })
   t.end()
 }
 

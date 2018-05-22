@@ -1,4 +1,4 @@
-var spans = require('../spans');
+var spans = require('../spans')
 
 module.exports = {
 
@@ -82,7 +82,7 @@ module.exports = {
   , _default      :  spans.Keyword
 }
 , 'Punctuator': {
-    ';': function (s) { return ''; } 
+    ';': function(s) { return '' }
   , '.': spans.Punctuation
   , ',': spans.Punctuation
 
@@ -186,4 +186,4 @@ module.exports = {
     }
 
   , _default: undefined
-};
+}

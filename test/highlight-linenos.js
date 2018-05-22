@@ -1,12 +1,11 @@
-/*jshint asi: true*/
-var test    =  require('tape')
-  , path    =  require('path')
-  , peacock =  require('..')
-  , utl = require('./utl')
+'use strict'
 
-test('when linenos is true', function (t) {
-  var cases = { 
-    'one line': [ 
+var test    =  require('tape')
+var peacock =  require('..')
+
+test('when linenos is true', function(t) {
+  var cases = {
+    'one line': [
         'var a = 3;'
       , [ '<div class="highlight"><pre>'
         , '<table>'
@@ -36,11 +35,11 @@ test('when linenos is true', function (t) {
         , '</pre></div>'
         ].join('\n')
     ]
-  };
+  }
 
-  Object.keys(cases).forEach(function (key) {
+  Object.keys(cases).forEach(function(key) {
     t.equals(peacock.highlight(cases[key][0], { linenos: true }), cases[key][1], key)
   })
 
   t.end()
-});
+})

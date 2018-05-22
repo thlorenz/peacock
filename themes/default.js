@@ -1,4 +1,4 @@
-var spans = require('../spans');
+var spans = require('../spans')
 
 module.exports = {
 
@@ -186,4 +186,4 @@ module.exports = {
     }
 
   , _default: undefined
-};
+}
