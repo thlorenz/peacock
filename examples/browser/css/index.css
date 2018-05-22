@@ -1,0 +1,50 @@
+.code {
+  width: 650px;
+  height: 500px;
+  display: block;
+  margin: 10px;
+  font-family: Consolas;
+  font-size: 16px;
+}
+
+.result {
+  margin: 10px;
+  width: 650px;
+  height: 500px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  border-radius:10px;
+  border:1px solid #D7D8C8;
+  padding: 5px 0 15px 0;
+  
+  -moz-box-shadow: 5px 4px 10px 5px #ccc;
+  -webkit-box-shadow: 5px 4px 10px 5px #ccc;
+  box-shadow: 5px 4px 10px 5px #ccc;
+}
+
+.result * {
+  height: 500px;
+}
+
+.result pre {
+  overflow-y: auto;
+}
+
+#style-selector-container {
+  display: block;
+  float: right;
+}
+
+#style-selector-container h4 {
+  display: inline;
+  margin-right: 10px;
+}
+
+#linenumbers {
+  display: block;
+  float: left;
+  margin-left: 10px;
+}

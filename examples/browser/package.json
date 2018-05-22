@@ -1,0 +1,8 @@
+{
+  "name": "peacock-browser-example",
+  "description": "Example of using peacock via commonJS to highlight code",
+  "devDependencies": {
+    "budo": "~11.2.2",
+    "jquery": "~3.3.1"
+  }
+}
