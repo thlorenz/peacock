@@ -67,7 +67,12 @@ function highlight(code, opts) {
     return lines.join('\n')
   }
 
-  opts = opts || { }
+  opts = opts || {}
+  var jsx = (
+    typeof opts === 'string' ||
+    typeof opts.jsx === 'undefined' ||
+    !!opts.jsx
+  )
 
   function isObject(obj) {
     return toString.call(obj) === '[object Object]'
@@ -77,7 +82,7 @@ function highlight(code, opts) {
     theme = isObject(opts.theme) ? opts.theme : resolveTheme(opts.theme)
   } else { theme = defaultTheme }
 
-  highlightedCode = redeyed(code, theme).code
+  highlightedCode = redeyed(code, theme, { jsx: jsx }).code
 
   // Wrap highlighted code inside two column table with lineno column
   if (opts.linenos) {

@@ -34,6 +34,10 @@ test('\nhighlights with default theme', function(t) {
       'var a = \'<div></div>\''
     , '<span class="k">var</span> a <span class="o">=</span> <span class="s">\'&lt;div&gt;&lt;/div&gt;\'</span>'
     ]
+  , 'jsx syntax': [
+      '<Component start={1} className="hello" />'
+    , '<span class="o">&lt;</span><span class="nt">Component</span> <span class="nt">start</span><span class="o">=</span><span class="p">{</span><span class="f">1</span><span class="p">}</span> <span class="nc">className</span><span class="o">=</span><span class="s">"hello"</span> <span class="o">/</span><span class="o">&gt;</span>'
+    ]
   }
   run(t, cases)
 })

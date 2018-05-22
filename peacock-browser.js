@@ -359,31 +359,36 @@
       return lines.join('\n')
     }
   
-    opts = opts || { }
+    opts = opts || {}
+    var jsx = (
+      typeof opts === 'string' ||
+      typeof opts.jsx === 'undefined' ||
+      !!opts.jsx
+    )
   
     function isObject(obj) {
       return toString.call(obj) === '[object Object]'
     }
   
-    if (opts.theme)    {
-  theme = isObject(opts.theme) ? opts.theme : resolveTheme(opts.theme)
-  }  else    { theme = defaultTheme }
+    if (opts.theme) {
+      theme = isObject(opts.theme) ? opts.theme : resolveTheme(opts.theme)
+    } else { theme = defaultTheme }
   
-    highlightedCode = redeyed(code, theme).code
+    highlightedCode = redeyed(code, theme, { jsx: jsx }).code
   
     // Wrap highlighted code inside two column table with lineno column
     if (opts.linenos) {
-  highlightedCode = [
-        '<table>'
-      ,   '<td>'
-      ,     createLinenos(highlightedCode)
-      ,   '</td>'
-      ,   '<td>'
-      ,      highlightedCode
-      ,   '</td>'
-      , '</table>'
-      ].join('\n')
-  }
+      highlightedCode = [
+          '<table>'
+        ,   '<td>'
+        ,     createLinenos(highlightedCode)
+        ,   '</td>'
+        ,   '<td>'
+        ,      highlightedCode
+        ,   '</td>'
+        , '</table>'
+        ].join('\n')
+    }
   
     return [
         '<div class="highlight"><pre>'

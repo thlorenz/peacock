@@ -1,25 +1,27 @@
-# peacock [![build status](https://secure.travis-ci.org/thlorenz/peacock.png)](http://travis-ci.org/thlorenz/peacock)
+# peacock [![build status](https://secure.travis-ci.org/thlorenz/peacock.svg?branch=master)](http://travis-ci.org/thlorenz/peacock)
+
+<a href="https://www.patreon.com/bePatron?u=8663953"><img alt="become a patron" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" height="35px"></a>
 
 JavaScript syntax highlighter that generates [pygments](http://pygments.org/) compatible html and therefore supports
 [pygments styles](https://github.com/thlorenz/peacock/tree/master/styles).
 
-![peacock](http://animal.discovery.com/birds/peacock/pictures/peacock-picture.jpg)
+![peacock](http://animal-dream.com/data_images/peacock/peacock2.jpg)
 
-[Peacock](http://animal.discovery.com/birds/peacock/) *(Pavo cristasus)*
+Peacock *(Pavo cristasus)*
 
 ## Installation
 
     npm install peacock
 
-## Try it 
+## Try it
 
-### Online 
+### Online
 
 [peacock github page](http://thlorenz.github.com/peacock/)
 
 ### Included demo
 
-`npm exlore peacock` 
+`npm exlore peacock`
 `npm run demo`
 
 ## Features and limitations
@@ -37,9 +39,10 @@ Returns the highlighted version of the code that was passed or throws an error i
 #### opts:
 
 ```js
-{   
+{
     theme: {String}|{Object}
-  , linenos: true|false 
+  , linenos: true|false
+  , jsx: true|false
 }
 ```
 
@@ -54,6 +57,11 @@ Returns the highlighted version of the code that was passed or throws an error i
 
 - if true the generated html includes line numbers
 - default is false
+
+#### jsx
+
+- if `true` peacock will support `jsx` syntax (which makes highlighting a tad bit slower)
+- default: `true`
 
 ## Browser support
 
