@@ -1,7 +1,22 @@
 'use strict'
 
+/**
+ * @name peacock.defaultTheme
+ * @returns {Object} the default peacock theme used to highlight code
+ */
 var defaultTheme = require('./themes/default')
+
+/**
+ * @name peacock.spans
+ * @returns {Object} the default peacock spans used to wrap code tokens
+ */
 var spans        = require('./spans')
+/**
+ * @name peacock.classes
+ * @returns {Object} the default peacock classes used to highlight code
+ */
+var classes = spans.classes
+
 var redeyed      = require('redeyed')
 var path         = require('path')
 
@@ -20,6 +35,17 @@ function resolveTheme(t) {
   }
 }
 
+/**
+ * Highlights the proviced code or throws an error if it was not able to parse it.
+ *
+ * @name peacock.highlight
+ * @param {String} code to highlight
+ * @param {Object} $0 options
+ * @param {Object|String} [$0.theme = peacock.defaultTheme] to use when highlighting [empty sample](https://github.com/thlorenz/peacock/blob/master/themes/empty.js)
+ * @param {Boolean} [$0.linenos = false] if `true` line numbers will be included
+ * @param {Boolean} [$0.jsx = true] if `true` peacock will support `jsx` syntax (which makes highlighting a tad bit slower)
+ * @returns {String} the HTML with containing the highlighted code
+ */
 function highlight(code, opts) {
   var toString = Object.prototype.toString
   var theme
@@ -110,5 +136,5 @@ module.exports = {
     highlight    : highlight
   , defaultTheme : defaultTheme
   , spans        : spans
-  , classes      : spans.classes
+  , classes      : classes
 }
