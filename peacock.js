@@ -1,8 +1,9 @@
 'use strict'
 
-var defaultTheme =  require('./themes/default')
-var redeyed      =  require('redeyed')
-var path         =  require('path')
+var defaultTheme = require('./themes/default')
+var spans        = require('./spans')
+var redeyed      = require('redeyed')
+var path         = require('path')
 
 function isPath(s) {
   return (/[/\\]/).test(s)
@@ -106,5 +107,8 @@ function highlight(code, opts) {
 }
 
 module.exports = {
-  highlight: highlight
+    highlight    : highlight
+  , defaultTheme : defaultTheme
+  , spans        : spans
+  , classes      : spans.classes
 }

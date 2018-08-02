@@ -80,3 +80,4 @@ Object.keys(classes)
   })
 
 module.exports = spans
+module.exports.classes = classes
